@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
+import java.util.stream.Stream;
 
 import com.suraj.code.graph.VertexWithWeight;
 
@@ -35,6 +36,7 @@ public class WeightedGraphSampleWithStringNode {
 	 
 	void removeVertex(String label) {
 		VertexWithWeight v = new VertexWithWeight(label);
+		//convert all value of map into string and iterate through all list and remove the entry of these vertex
 		adjEdges.values().stream().forEach(e -> e.remove(v));
 		adjEdges.remove(new VertexWithWeight(label));
 	}
